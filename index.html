@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letters</title>
+    
+    <style>
+
+    div#buttons {
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+  }
+    
+  button {
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    background-color: #1976f0;
+    color: #fff;
+    font-size: 60px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: cursive;
+    font-weight: 600;
+}
+
+div#wordDisplay {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+button.btn2 {background: #004aad;}
+button.btn3 {background: #5271ff;}
+button.btn4 {background: #38b6ff;}
+button.btn5 {background: #0cc1e0;}
+button.btn6 {background: #0097b2;}
+button.btn7 {background: #5e17eb;}
+button.btn8 {background: #8c52ff;}
+button.btn9 {background: #cb6ce6;}
+button.btn10 {background: #c4bce1;}
+button.btn11 {background: #ff66c4;}
+button.btn12 {background: #ff5757;}
+button.btn13 {background: #ff3131;}
+button.btn14 {background: #ff914d;}
+button.btn15 {background: #ffbd59;}
+button.btn16 {background: #f4dd64;}
+button.btn17 {background: #00bf63;}
+button.btn18 {background: #7ed957;}
+button.btn19 {background: #00bf63;}
+button.btn20 {background: #0ce17b;}
+button.btn21 {background: #0ce1db;}
+button.btn22 {background: #0cc1e0;}
+button.btn23 {background: #0c7adf;}
+button.btn24 {background: #0c41df;}
+button.btn25 {background: #7856f4;}
+button.btn26 {background: #f45694;}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="buttons">
+    <button class="btn1" onclick="showRandomAlphabet('A')">A</button>
+    <button class="btn2" onclick="showRandomAlphabet('B')">B</button>
+    <button class="btn3" onclick="showRandomAlphabet('C')">C</button>
+    <button class="btn4" onclick="showRandomAlphabet('D')">D</button>
+    <button class="btn5" onclick="showRandomAlphabet('E')">E</button>
+    <button class="btn6" onclick="showRandomAlphabet('F')">F</button>
+    <button class="btn7" onclick="showRandomAlphabet('G')">G</button>
+    <button class="btn8" onclick="showRandomAlphabet('H')">H</button>
+    <button class="btn9" onclick="showRandomAlphabet('I')">I</button>
+    <button class="btn10" onclick="showRandomAlphabet('J')">J</button>
+    <button class="btn11" onclick="showRandomAlphabet('K')">K</button>
+    <button class="btn12" onclick="showRandomAlphabet('L')">L</button>
+    <button class="btn13" onclick="showRandomAlphabet('M')">M</button>
+    <button class="btn14" onclick="showRandomAlphabet('N')">N</button>
+    <button class="btn15" onclick="showRandomAlphabet('O')">O</button>
+    <button class="btn16" onclick="showRandomAlphabet('P')">P</button>
+    <button class="btn17" onclick="showRandomAlphabet('Q')">Q</button>
+    <button class="btn18" onclick="showRandomAlphabet('R')">R</button>
+    <button class="btn19" onclick="showRandomAlphabet('S')">S</button>
+    <button class="btn20" onclick="showRandomAlphabet('T')">T</button>
+    <button class="btn21" onclick="showRandomAlphabet('U')">U</button>
+    <button class="btn22" onclick="showRandomAlphabet('V')">V</button>
+    <button class="btn23" onclick="showRandomAlphabet('W')">W</button>
+    <button class="btn24" onclick="showRandomAlphabet('X')">X</button>
+    <button class="btn25" onclick="showRandomAlphabet('Y')">Y</button>
+    <button class="btn26" onclick="showRandomAlphabet('Z')">Z</button>
+  </div>
+
+<div id="wordDisplay"></div>
+
+<script>
+    
+    const alphabets = {
+        'A': ['Apple', 'Ant', 'Airplane', 'Alligator', 'Ape'],
+        'B': ['Banana', 'ball', 'basket', 'book', 'bike'],
+        'C': ['cat', 'car', 'chair', 'camera', 'clock'],
+        'D': ['desk', 'dog', 'door', 'dish', 'drone'],
+        'E': ['egg', 'earphone', 'elephant', 'eraser', 'engine'],
+        'F': ['fan', 'fridge', 'football', 'folder', 'furniture'],
+        'G': ['gun', 'guitar', 'globe', 'glitter', 'grater'],
+        'H': ['hen', 'house', 'helicopter', 'heater', 'hanger'],
+        'I': ['ice cream', 'igloo', 'iron', 'island', 'iPad'],
+        'J': ['jug', 'jacket', 'jewelry', 'jar', 'juice'],
+        'K': ['kite', 'keyboard', 'kitchen', 'knife', 'kettle'],
+        'L': ['leg', 'lamp', 'laptop', 'luggage', 'lion'],
+        'M': ['mouse', 'map', 'mop', 'microphone', 'muj'],
+        'N': ['nose', 'nib', 'nest', 'newspaper', 'notebook'],
+        'O': ['orange', 'oven', 'oxygen', 'oil', 'overcoat'],
+        'P': ['pen', 'pipe', 'phone', 'piano', 'purse'],
+        'Q': ['quilt', 'quail', 'queen', 'quarter', 'quill'],
+        'R': ['rat', 'radio', 'rug', 'router', 'robot'],
+        'S': ['sofa', 'smartphone', 'speaker', 'sneaker', 'sink'],
+        'T': ['table', 'television', 'telephone', 'toaster', 'telescope'],
+        'U': ['umbrella', 'universe', 'UFO', 'USB Drive', 'uncle'],
+        'V': ['van', 'virous', 'vase', 'vacuum cleaner', 'violin'],
+        'W': ['water', 'watch', 'watermelon', 'wheelchair', 'wine'],
+        'X': ['xylophone', 'x-Ray', 'x-Box', 'xenonlamp', 'xyris'],
+        'Y': ['yatch', 'yogamat', 'yoyo', 'yarn', 'yard'],
+        'Z': ['zoo', 'zabera', 'zipper', 'zucchini', 'zero'],
+        };
+        
+    function showRandomAlphabet (letter) {
+      const words = alphabets[letter];
+      if (words) {
+            const displayArea = document.getElementById('wordDisplay');
+            displayArea.innerHTML = ''; 
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const word = words[randomIndex];
+            const wordElement = document.createElement('p');
+            wordElement.textContent = word;
+            displayArea.appendChild(wordElement);
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
